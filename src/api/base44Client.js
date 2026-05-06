@@ -40,6 +40,9 @@ const normalizeUser = (authUser) => {
   };
 };
 
+const isMissingSessionError = (error) =>
+  error?.name === "AuthSessionMissingError" || error?.message?.toLowerCase?.().includes("auth session missing");
+
 const createEntityClient = (entityName) => {
   const table = entityToTable[entityName] ?? entityName.toLowerCase();
   return {
@@ -125,7 +128,10 @@ export const db = {
         data: { user },
         error
       } = await supabase.auth.getUser();
-      if (error) throw error;
+      if (error) {
+        if (isMissingSessionError(error)) return null;
+        throw error;
+      }
       return normalizeUser(user);
     },
     async logout() {
