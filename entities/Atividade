@@ -1,0 +1,65 @@
+{
+  "name": "Atividade",
+  "type": "object",
+  "properties": {
+    "tipo": {
+      "type": "string",
+      "enum": [
+        "chamada",
+        "email",
+        "reuniao",
+        "tarefa",
+        "nota",
+        "atualizacao"
+      ],
+      "default": "nota"
+    },
+    "assunto": {
+      "type": "string"
+    },
+    "descricao": {
+      "type": "string"
+    },
+    "contato_id": {
+      "type": "string"
+    },
+    "oportunidade_id": {
+      "type": "string"
+    },
+    "data_atividade": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "duracao_minutos": {
+      "type": "number"
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "agendado",
+        "concluido",
+        "cancelado"
+      ],
+      "default": "concluido"
+    },
+    "proprietario": {
+      "type": "string"
+    },
+    "participantes": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "anexos": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    }
+  },
+  "required": [
+    "tipo",
+    "assunto"
+  ]
+}

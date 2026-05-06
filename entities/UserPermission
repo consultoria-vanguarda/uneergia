@@ -1,0 +1,20 @@
+{
+  "name": "UserPermission",
+  "type": "object",
+  "properties": {
+    "user_email": {
+      "type": "string",
+      "description": "Email do usu\u00e1rio"
+    },
+    "paginas_permitidas": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "description": "Lista de pages permitidas para o usu\u00e1rio"
+    }
+  },
+  "required": [
+    "user_email"
+  ]
+}

@@ -1,0 +1,53 @@
+{
+  "name": "FollowUpTemplate",
+  "type": "object",
+  "properties": {
+    "nome": {
+      "type": "string",
+      "description": "Nome do template"
+    },
+    "tipo": {
+      "type": "string",
+      "enum": [
+        "email",
+        "sms"
+      ],
+      "default": "email"
+    },
+    "assunto": {
+      "type": "string",
+      "description": "Assunto do email"
+    },
+    "corpo": {
+      "type": "string",
+      "description": "Corpo da mensagem (suporta vari\u00e1veis: {{nome}}, {{empresa}})"
+    },
+    "estagio_vendas": {
+      "type": "string",
+      "enum": [
+        "lead_novo",
+        "qualificacao",
+        "proposta",
+        "negociacao",
+        "fechamento"
+      ],
+      "description": "Est\u00e1gio de vendas onde usar este template"
+    },
+    "categoria": {
+      "type": "string",
+      "enum": [
+        "boas_vindas",
+        "follow_up",
+        "proposta",
+        "lembrete",
+        "agradecimento"
+      ],
+      "default": "follow_up"
+    }
+  },
+  "required": [
+    "nome",
+    "tipo",
+    "corpo"
+  ]
+}

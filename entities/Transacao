@@ -1,0 +1,56 @@
+{
+  "name": "Transacao",
+  "type": "object",
+  "properties": {
+    "tipo": {
+      "type": "string",
+      "enum": [
+        "entrada",
+        "saida"
+      ],
+      "default": "entrada"
+    },
+    "categoria": {
+      "type": "string",
+      "enum": [
+        "boleto_cliente",
+        "pagamento_usina",
+        "comissao",
+        "despesa_operacional",
+        "outro"
+      ],
+      "default": "boleto_cliente"
+    },
+    "descricao": {
+      "type": "string"
+    },
+    "valor": {
+      "type": "number"
+    },
+    "data": {
+      "type": "string",
+      "format": "date"
+    },
+    "boleto_id": {
+      "type": "string"
+    },
+    "cliente_id": {
+      "type": "string"
+    },
+    "usina_id": {
+      "type": "string"
+    },
+    "comprovante_url": {
+      "type": "string"
+    },
+    "origem_arquivo": {
+      "type": "string",
+      "description": "Nome do arquivo OFX/CSV importado"
+    }
+  },
+  "required": [
+    "tipo",
+    "valor",
+    "data"
+  ]
+}

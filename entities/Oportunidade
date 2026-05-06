@@ -1,0 +1,96 @@
+{
+  "name": "Oportunidade",
+  "type": "object",
+  "properties": {
+    "titulo": {
+      "type": "string"
+    },
+    "contato_id": {
+      "type": "string"
+    },
+    "contato_nome": {
+      "type": "string"
+    },
+    "usina_parceira": {
+      "type": "string",
+      "description": "Nome da usina que fornecer\u00e1 os cr\u00e9ditos"
+    },
+    "consumo_kwh": {
+      "type": "number",
+      "description": "Consumo mensal do cliente em kWh"
+    },
+    "economia_estimada_percentual": {
+      "type": "number",
+      "description": "Percentual de economia estimado"
+    },
+    "economia_estimada_reais": {
+      "type": "number",
+      "description": "Economia mensal estimada em R$"
+    },
+    "valor_proposta_mensal": {
+      "type": "number",
+      "description": "Valor mensal da proposta"
+    },
+    "valor_total_anual": {
+      "type": "number",
+      "description": "Valor total do contrato anual"
+    },
+    "probabilidade": {
+      "type": "number",
+      "description": "Probabilidade de fechamento (0-100)"
+    },
+    "estagio": {
+      "type": "string",
+      "enum": [
+        "qualificacao",
+        "analise_consumo",
+        "proposta_enviada",
+        "negociacao",
+        "documentacao",
+        "ganho",
+        "perdido"
+      ],
+      "default": "qualificacao"
+    },
+    "data_inicio_injecao": {
+      "type": "string",
+      "format": "date",
+      "description": "Data prevista para in\u00edcio da inje\u00e7\u00e3o"
+    },
+    "data_fechamento_esperada": {
+      "type": "string",
+      "format": "date"
+    },
+    "data_fechamento_real": {
+      "type": "string",
+      "format": "date"
+    },
+    "proprietario": {
+      "type": "string"
+    },
+    "motivo_perda": {
+      "type": "string"
+    },
+    "descricao": {
+      "type": "string"
+    },
+    "proximos_passos": {
+      "type": "string"
+    },
+    "documentos": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "description": "URLs dos documentos anexados"
+    },
+    "dynamics_opportunity_id": {
+      "type": "string",
+      "description": "ID da oportunidade no Dynamics 365"
+    }
+  },
+  "required": [
+    "titulo",
+    "contato_id"
+  ]
+}

@@ -1,0 +1,75 @@
+{
+  "name": "FollowUpTask",
+  "type": "object",
+  "properties": {
+    "titulo": {
+      "type": "string"
+    },
+    "descricao": {
+      "type": "string"
+    },
+    "entidade_tipo": {
+      "type": "string",
+      "enum": [
+        "Lead",
+        "Contato",
+        "Oportunidade"
+      ]
+    },
+    "entidade_id": {
+      "type": "string"
+    },
+    "entidade_nome": {
+      "type": "string"
+    },
+    "workflow_id": {
+      "type": "string",
+      "description": "Workflow que criou esta tarefa"
+    },
+    "atribuido_para": {
+      "type": "string",
+      "description": "Email do usu\u00e1rio respons\u00e1vel"
+    },
+    "data_agendada": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "data_concluida": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "pendente",
+        "concluida",
+        "cancelada"
+      ],
+      "default": "pendente"
+    },
+    "tipo_acao": {
+      "type": "string",
+      "enum": [
+        "ligar",
+        "email",
+        "reuniao",
+        "proposta"
+      ],
+      "default": "ligar"
+    },
+    "prioridade": {
+      "type": "string",
+      "enum": [
+        "baixa",
+        "media",
+        "alta"
+      ],
+      "default": "media"
+    }
+  },
+  "required": [
+    "titulo",
+    "entidade_tipo",
+    "entidade_id"
+  ]
+}

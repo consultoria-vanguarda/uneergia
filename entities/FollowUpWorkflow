@@ -1,0 +1,75 @@
+{
+  "name": "FollowUpWorkflow",
+  "type": "object",
+  "properties": {
+    "nome": {
+      "type": "string",
+      "description": "Nome do workflow"
+    },
+    "descricao": {
+      "type": "string"
+    },
+    "entidade_alvo": {
+      "type": "string",
+      "enum": [
+        "Lead",
+        "Contato",
+        "Oportunidade"
+      ],
+      "description": "Tipo de entidade que dispara o workflow"
+    },
+    "trigger_condicao": {
+      "type": "string",
+      "enum": [
+        "status_change",
+        "time_based",
+        "manual"
+      ],
+      "default": "status_change",
+      "description": "O que dispara o workflow"
+    },
+    "trigger_status": {
+      "type": "string",
+      "description": "Status que dispara o workflow (ex: novo, qualificado)"
+    },
+    "delay_dias": {
+      "type": "number",
+      "default": 0,
+      "description": "Dias de espera antes de executar"
+    },
+    "acoes": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "tipo": {
+            "type": "string",
+            "enum": [
+              "email",
+              "tarefa",
+              "notificacao"
+            ]
+          },
+          "template_id": {
+            "type": "string"
+          },
+          "atribuir_para": {
+            "type": "string"
+          },
+          "delay_dias": {
+            "type": "number"
+          }
+        }
+      },
+      "description": "A\u00e7\u00f5es a serem executadas"
+    },
+    "ativo": {
+      "type": "boolean",
+      "default": true
+    }
+  },
+  "required": [
+    "nome",
+    "entidade_alvo"
+  ]
+}

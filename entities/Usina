@@ -1,0 +1,99 @@
+{
+  "name": "Usina",
+  "type": "object",
+  "properties": {
+    "nome": {
+      "type": "string",
+      "description": "Nome da usina parceira"
+    },
+    "cnpj": {
+      "type": "string",
+      "description": "CNPJ da usina"
+    },
+    "distribuidoras": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "description": "Distribuidoras de energia atendidas (CEMIG, CPFL, etc)"
+    },
+    "estados": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "description": "Estados onde a usina opera"
+    },
+    "preco_kwh": {
+      "type": "number",
+      "description": "Pre\u00e7o por kWh em R$"
+    },
+    "desconto_percentual": {
+      "type": "number",
+      "description": "Percentual de desconto oferecido ao cliente final"
+    },
+    "isencao_tributaria": {
+      "type": "boolean",
+      "default": false,
+      "description": "Se possui isen\u00e7\u00e3o de ICMS ou outros tributos"
+    },
+    "incentivo_fiscal_percentual": {
+      "type": "number",
+      "description": "Percentual de incentivo fiscal do estado"
+    },
+    "tipo_comissao": {
+      "type": "string",
+      "enum": [
+        "desconto_conta",
+        "transferencia",
+        "ambos"
+      ],
+      "description": "Forma de pagamento da comiss\u00e3o"
+    },
+    "comissao_percentual": {
+      "type": "number",
+      "description": "Percentual de comiss\u00e3o por indica\u00e7\u00e3o"
+    },
+    "comissao_valor_fixo": {
+      "type": "number",
+      "description": "Valor fixo de comiss\u00e3o por kWh ou mensal"
+    },
+    "capacidade_disponivel_kwh": {
+      "type": "number",
+      "description": "Capacidade dispon\u00edvel em kWh"
+    },
+    "contato_nome": {
+      "type": "string"
+    },
+    "contato_email": {
+      "type": "string"
+    },
+    "contato_telefone": {
+      "type": "string"
+    },
+    "api_endpoint": {
+      "type": "string",
+      "description": "URL da API para integra\u00e7\u00e3o"
+    },
+    "api_key": {
+      "type": "string",
+      "description": "Chave de API para integra\u00e7\u00e3o"
+    },
+    "observacoes": {
+      "type": "string"
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "ativa",
+        "inativa",
+        "em_negociacao"
+      ],
+      "default": "ativa"
+    }
+  },
+  "required": [
+    "nome",
+    "preco_kwh"
+  ]
+}

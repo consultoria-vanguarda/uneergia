@@ -1,0 +1,79 @@
+{
+  "name": "Lead",
+  "type": "object",
+  "properties": {
+    "primeiro_nome": {
+      "type": "string"
+    },
+    "sobrenome": {
+      "type": "string"
+    },
+    "tipo_cliente": {
+      "type": "string",
+      "enum": [
+        "pessoa_fisica",
+        "pessoa_juridica"
+      ],
+      "default": "pessoa_fisica"
+    },
+    "telefone_comercial": {
+      "type": "string"
+    },
+    "telefone_celular": {
+      "type": "string"
+    },
+    "email": {
+      "type": "string"
+    },
+    "estado": {
+      "type": "string"
+    },
+    "cidade": {
+      "type": "string"
+    },
+    "cliente_que_indicou": {
+      "type": "string"
+    },
+    "razao_status": {
+      "type": "string",
+      "enum": [
+        "pendente",
+        "novo",
+        "contatado",
+        "qualificado",
+        "desqualificado"
+      ],
+      "default": "novo"
+    },
+    "origem": {
+      "type": "string",
+      "enum": [
+        "site",
+        "indicacao",
+        "telefone",
+        "evento",
+        "marketing",
+        "outro"
+      ],
+      "default": "site"
+    },
+    "proprietario": {
+      "type": "string"
+    },
+    "observacoes": {
+      "type": "string"
+    },
+    "data_qualificacao": {
+      "type": "string",
+      "format": "date"
+    },
+    "cliente_id": {
+      "type": "string",
+      "description": "ID do cliente criado a partir deste lead"
+    }
+  },
+  "required": [
+    "primeiro_nome",
+    "telefone_comercial"
+  ]
+}

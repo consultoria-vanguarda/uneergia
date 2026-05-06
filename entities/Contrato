@@ -1,0 +1,117 @@
+{
+  "name": "Contrato",
+  "type": "object",
+  "properties": {
+    "numero_contrato": {
+      "type": "string"
+    },
+    "cliente_id": {
+      "type": "string"
+    },
+    "cliente_nome": {
+      "type": "string"
+    },
+    "lead_potencial_id": {
+      "type": "string"
+    },
+    "proposta_id": {
+      "type": "string"
+    },
+    "uc_id": {
+      "type": "string"
+    },
+    "uc_numero": {
+      "type": "string"
+    },
+    "tipo_pessoa": {
+      "type": "string",
+      "enum": [
+        "fisica",
+        "juridica"
+      ],
+      "default": "fisica"
+    },
+    "razao_status": {
+      "type": "string",
+      "enum": [
+        "aguardando_aprovacao",
+        "aprovado",
+        "ativo",
+        "suspenso",
+        "cancelado",
+        "concluido"
+      ],
+      "default": "aguardando_aprovacao"
+    },
+    "valor_plano_proposta": {
+      "type": "number",
+      "description": "Valor mensal do contrato"
+    },
+    "valor_plano_contrato": {
+      "type": "number"
+    },
+    "data_inicio": {
+      "type": "string",
+      "format": "date"
+    },
+    "data_fim": {
+      "type": "string",
+      "format": "date"
+    },
+    "duracao_meses": {
+      "type": "number",
+      "default": 12
+    },
+    "resultado_analise_credito": {
+      "type": "string",
+      "enum": [
+        "aprovado",
+        "reprovado",
+        "reanalisar",
+        "pendente"
+      ],
+      "default": "pendente"
+    },
+    "status_final_credito": {
+      "type": "string"
+    },
+    "motivo_reprovacao": {
+      "type": "string"
+    },
+    "docusign_status": {
+      "type": "string",
+      "enum": [
+        "nao_enviado",
+        "enviado",
+        "assinado",
+        "concluido"
+      ],
+      "default": "nao_enviado"
+    },
+    "docusign_envelope_id": {
+      "type": "string"
+    },
+    "condicoes_comerciais": {
+      "type": "string"
+    },
+    "observacoes": {
+      "type": "string"
+    },
+    "data_assinatura": {
+      "type": "string",
+      "format": "date"
+    },
+    "documentos": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "description": "URLs dos documentos do contrato (PDF assinado, RG, comprovante de endere\u00e7o, etc)"
+    }
+  },
+  "required": [
+    "cliente_id",
+    "proposta_id",
+    "uc_id"
+  ]
+}

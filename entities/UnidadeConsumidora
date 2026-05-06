@@ -1,0 +1,112 @@
+{
+  "name": "UnidadeConsumidora",
+  "type": "object",
+  "properties": {
+    "numero_uc": {
+      "type": "string",
+      "description": "N\u00famero da Unidade Consumidora"
+    },
+    "cliente_id": {
+      "type": "string"
+    },
+    "cliente_nome": {
+      "type": "string"
+    },
+    "lead_potencial_id": {
+      "type": "string"
+    },
+    "concessionaria": {
+      "type": "string",
+      "description": "CEMIG, CPFL, Light, etc"
+    },
+    "tipo_tarifa": {
+      "type": "string",
+      "enum": [
+        "b1_convencional",
+        "b1_branca",
+        "b3_comercial",
+        "a4_industrial"
+      ],
+      "default": "b1_convencional"
+    },
+    "disponibilidade": {
+      "type": "string",
+      "enum": [
+        "monofasico",
+        "bifasico",
+        "trifasico"
+      ],
+      "default": "monofasico"
+    },
+    "subclasse": {
+      "type": "string",
+      "enum": [
+        "residencial",
+        "comercial",
+        "industrial",
+        "rural",
+        "publico"
+      ],
+      "default": "residencial"
+    },
+    "portabilidade": {
+      "type": "string",
+      "enum": [
+        "sim",
+        "nao"
+      ],
+      "default": "nao"
+    },
+    "possui_outro_sge": {
+      "type": "string",
+      "enum": [
+        "sim",
+        "nao"
+      ],
+      "default": "nao"
+    },
+    "consumo_medio_kwh": {
+      "type": "number"
+    },
+    "valor_conta_media": {
+      "type": "number"
+    },
+    "cep": {
+      "type": "string"
+    },
+    "logradouro": {
+      "type": "string"
+    },
+    "numero": {
+      "type": "string"
+    },
+    "complemento": {
+      "type": "string"
+    },
+    "cidade": {
+      "type": "string"
+    },
+    "estado": {
+      "type": "string"
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "criada",
+        "ativa",
+        "pendente_aprovacao",
+        "inativa"
+      ],
+      "default": "criada"
+    },
+    "data_criacao": {
+      "type": "string",
+      "format": "date"
+    }
+  },
+  "required": [
+    "numero_uc",
+    "cliente_id",
+    "concessionaria"
+  ]
+}

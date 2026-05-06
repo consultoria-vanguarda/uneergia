@@ -1,0 +1,91 @@
+{
+  "name": "Proposta",
+  "type": "object",
+  "properties": {
+    "numero_proposta": {
+      "type": "string"
+    },
+    "cliente_id": {
+      "type": "string"
+    },
+    "cliente_nome": {
+      "type": "string"
+    },
+    "lead_potencial_id": {
+      "type": "string"
+    },
+    "uc_id": {
+      "type": "string",
+      "description": "ID da Unidade Consumidora"
+    },
+    "uc_numero": {
+      "type": "string"
+    },
+    "parceiro_une_energia": {
+      "type": "string",
+      "description": "Nome da usina/parceiro UNE ENERGIA"
+    },
+    "validade_proposta": {
+      "type": "string",
+      "format": "date"
+    },
+    "consumo_kwh": {
+      "type": "number"
+    },
+    "economia_percentual": {
+      "type": "number"
+    },
+    "economia_reais_mes": {
+      "type": "number"
+    },
+    "valor_proposta_mensal": {
+      "type": "number"
+    },
+    "valor_proposta_anual": {
+      "type": "number"
+    },
+    "desconto_aplicado": {
+      "type": "number"
+    },
+    "razao_status": {
+      "type": "string",
+      "enum": [
+        "valida",
+        "aguardando_aprovacao",
+        "aprovada",
+        "rejeitada",
+        "expirada"
+      ],
+      "default": "valida"
+    },
+    "data_criacao": {
+      "type": "string",
+      "format": "date"
+    },
+    "data_aprovacao": {
+      "type": "string",
+      "format": "date"
+    },
+    "observacoes": {
+      "type": "string"
+    },
+    "condicoes_diferenciadas": {
+      "type": "string"
+    },
+    "documentos": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "description": "URLs dos documentos anexados (proposta, simula\u00e7\u00e3o, etc)"
+    },
+    "contrato_id": {
+      "type": "string",
+      "description": "ID do contrato gerado"
+    }
+  },
+  "required": [
+    "cliente_id",
+    "uc_id"
+  ]
+}

@@ -1,0 +1,54 @@
+{
+  "name": "Boleto",
+  "type": "object",
+  "properties": {
+    "cliente_id": {
+      "type": "string"
+    },
+    "cliente_nome": {
+      "type": "string"
+    },
+    "numero_boleto": {
+      "type": "string"
+    },
+    "valor": {
+      "type": "number"
+    },
+    "data_vencimento": {
+      "type": "string",
+      "format": "date"
+    },
+    "data_pagamento": {
+      "type": "string",
+      "format": "date"
+    },
+    "referencia_mes": {
+      "type": "string",
+      "description": "M\u00eas de refer\u00eancia (ex: 2024-01)"
+    },
+    "kwh_faturado": {
+      "type": "number"
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "pendente",
+        "pago",
+        "vencido",
+        "cancelado"
+      ],
+      "default": "pendente"
+    },
+    "arquivo_url": {
+      "type": "string"
+    },
+    "linha_digitavel": {
+      "type": "string"
+    }
+  },
+  "required": [
+    "cliente_id",
+    "valor",
+    "data_vencimento"
+  ]
+}

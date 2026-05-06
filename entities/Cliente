@@ -1,0 +1,85 @@
+{
+  "name": "Cliente",
+  "type": "object",
+  "properties": {
+    "nome": {
+      "type": "string"
+    },
+    "cpf_cnpj": {
+      "type": "string"
+    },
+    "tipo_pessoa": {
+      "type": "string",
+      "enum": [
+        "fisica",
+        "juridica"
+      ],
+      "default": "fisica"
+    },
+    "email": {
+      "type": "string"
+    },
+    "telefone": {
+      "type": "string"
+    },
+    "endereco": {
+      "type": "string"
+    },
+    "cidade": {
+      "type": "string"
+    },
+    "estado": {
+      "type": "string"
+    },
+    "cep": {
+      "type": "string"
+    },
+    "numero_instalacao": {
+      "type": "string",
+      "description": "N\u00famero da instala\u00e7\u00e3o na distribuidora"
+    },
+    "distribuidora": {
+      "type": "string"
+    },
+    "consumo_medio_kwh": {
+      "type": "number",
+      "description": "Consumo m\u00e9dio mensal em kWh"
+    },
+    "usina_id": {
+      "type": "string",
+      "description": "ID da usina vinculada"
+    },
+    "status_injecao": {
+      "type": "string",
+      "enum": [
+        "pendente",
+        "em_analise",
+        "injetado",
+        "rejeitado"
+      ],
+      "default": "pendente"
+    },
+    "data_vinculacao": {
+      "type": "string",
+      "format": "date"
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "ativo",
+        "inativo",
+        "suspenso"
+      ],
+      "default": "ativo"
+    },
+    "observacoes": {
+      "type": "string"
+    }
+  },
+  "required": [
+    "nome",
+    "cpf_cnpj",
+    "email",
+    "distribuidora"
+  ]
+}
